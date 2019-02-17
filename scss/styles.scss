@@ -1,0 +1,92 @@
+@import "reset";
+@import "variables";
+@import "mixins";
+
+#main-nav {
+  background: $deepBlue;
+  font-size: $textSize;
+  ul {
+    width: 100%;
+    @include clearFix;
+  }
+  li {
+    float: left;
+    width: (100% / 6);
+    @include mediaQuery(760px){
+      width: 100%;
+    }
+  }
+  a {
+    text-decoration: none;  
+    padding: 16px;  
+    text-align: center;
+    color: $offWhite;
+    display: block;
+    &:hover {
+      background: $offWhite;
+      color: $deepBlue;
+    }
+  }
+} //main-nav
+
+
+section {
+  h1 {
+    font-size: $sectionH1;
+    color: $deepBlue;
+  }
+}
+
+.lead-banner {
+  @include banner;
+  text-align: right;
+}
+
+.lessons-banner {
+  @include banner;
+  li {
+    max-width: 50%;
+    margin: 30px 0;
+    font-size: $sectionH1;
+  }
+}
+
+#services {
+  margin: 60px 0;
+  text-align:center;
+  li {
+    float: left;
+    box-sizing: border-box;
+    width: (100% / 3);
+  }
+  img {
+    width: 60%;
+    margin: 20px 20%;
+  }
+  a {
+    text-decoration: none;
+    color: $deepBlue;
+    font-weight: bold;
+    font-size: $textSize;
+    &:hover {
+      color: complement($deepBlue);
+    }
+  }
+  ul {
+    @include clearFix;
+  }
+}
+
+#projects {
+  margin: 60px 0;
+  text-align: center;
+    li {
+    @include grid(4, 2%);
+    img {
+      width: 100%;
+    }
+  }
+  ul {
+    @include clearFix;
+  }
+}
